@@ -8,6 +8,8 @@ module JobartisCommon
       def phone
         Phone.new "996790419"
       end
+
+      extend self
     end
 
     module Companies
@@ -18,6 +20,8 @@ module JobartisCommon
       def phone
         Phone.new "929659742"
       end
+
+      extend self
     end
 
     Phone = Struct.new(:number) do
