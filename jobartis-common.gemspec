@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.authors = ["Maciej Lotkowski"]
   s.date = "2017-01-11"
-  s.description = "TODO: longer description of your gem"
+  s.description = "Common things for Jobartis"
   s.email = "maciej.lotkowski@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
