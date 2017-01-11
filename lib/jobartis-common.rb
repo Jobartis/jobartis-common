@@ -1,6 +1,6 @@
 module JobartisCommon
   module Contact
-    module Candidates
+    module Candidate
       def email
         Email.new "support@jobartis.com", "Jobartis Support"
       end
@@ -12,7 +12,7 @@ module JobartisCommon
       extend self
     end
 
-    module Companies
+    module Company
       def email
         Email.new "info@jobartis.com", "Jobartis Support"
       end
