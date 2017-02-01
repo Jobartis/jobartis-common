@@ -30,6 +30,7 @@ module JobartisCommon
       end
 
       alias :to_s :number
+      alias :to_str :to_s
     end
 
     Email = Struct.new(:address, :name) do
@@ -38,6 +39,7 @@ module JobartisCommon
       end
 
       alias :to_s :address
+      alias :to_str :to_s
     end
   end
 end
