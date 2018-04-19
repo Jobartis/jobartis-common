@@ -18,7 +18,7 @@ module JobartisCommon
       end
 
       def phone
-        Phone.new "996790419"
+        Phone.new "225300180"
       end
 
       extend self
