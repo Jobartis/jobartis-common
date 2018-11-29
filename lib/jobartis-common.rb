@@ -1,8 +1,8 @@
 module JobartisCommon
   module Contact
     module Candidate
-      def email
-        Email.new "info@jobartis.com", "Jobartis Support"
+      def email(tld = 'com')
+        Email.new "info@jobartis.#{tld}", "Jobartis Support"
       end
 
       def phone
@@ -13,8 +13,8 @@ module JobartisCommon
     end
 
     module Company
-      def email
-        Email.new "support@jobartis.com", "Jobartis Support"
+      def email(tld = 'com')
+        Email.new "support@jobartis.#{tld}", "Jobartis Support"
       end
 
       def phone
