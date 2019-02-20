@@ -12,11 +12,9 @@ module JobartisCommon
       "CM" => "697281166"
     }
 
-
-
     module Candidate
-      def email(tld = 'com')
-        Email.new "info@jobartis.#{tld}", "Jobartis Support"
+      def email(domain)
+        Email.new "info@#{domain}", "Jobartis Support"
       end
 
       def phone
@@ -27,14 +25,15 @@ module JobartisCommon
     end
 
     module Company
-      def email(tld = 'com')
-        Email.new "support@jobartis.#{tld}", "Jobartis Support"
+      def email(domain)
+        Email.new "support@#{domain}", "Jobartis Support"
       end
 
       def phone(country)
-        code = country,code
-        Phone.new JobartisCommon::Contact::PHONE_FOR_COMPANY_FROM[country.code],
-                  JobartisCommon::Contact::PREFIX_FOR[country.code]
+        code = country.code
+        
+        Phone.new JobartisCommon::Contact::PHONE_FOR_COMPANY_FROM[code],
+                  JobartisCommon::Contact::PREFIX_FOR[code]
       end
 
       extend self
