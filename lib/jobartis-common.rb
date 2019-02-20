@@ -17,6 +17,10 @@ module JobartisCommon
         Email.new "info@#{domain}", "Jobartis Support"
       end
 
+      def phone?(country)
+        country.code == "AO"
+      end
+
       def phone
         Phone.new "996790419"
       end
@@ -29,9 +33,13 @@ module JobartisCommon
         Email.new "support@#{domain}", "Jobartis Support"
       end
 
+      def phone?(country)
+        PHONE_FOR_COMPANY_FROM.has_key? country.code
+      end
+
       def phone(country)
         code = country.code
-        
+
         Phone.new JobartisCommon::Contact::PHONE_FOR_COMPANY_FROM[code],
                   JobartisCommon::Contact::PREFIX_FOR[code]
       end
