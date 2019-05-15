@@ -1,15 +1,18 @@
 module JobartisCommon
+  # TODO change the implementation, so it's JobartisCommon::Contact.new(country).company.email
   module Contact
     PREFIX_FOR = {
       "AO" => "+244",
       "ZM" => "+260",
-      "CM" => "+237"
+      "CM" => "+237",
+      "PT" => "+351"
     }
 
     PHONE_FOR_COMPANY_FROM = {
       "AO" => "225300180",
       "ZM" => "973332926",
-      "CM" => "697281166"
+      "CM" => "697281166",
+      "PT" => "916673164"
     }
 
     module Candidate
