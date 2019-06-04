@@ -1,5 +1,41 @@
 module JobartisCommon
+  class Bank
+    DETAILS = Hash.new(
+      recipient: "Jobartis Soluciones Web Africanas S.L.",
+      number: "ES4201318933382717016740",
+      code: "BESMESMM",
+      name: "Banco Espirito Santo Spain"
+    ).merge("AO" => {
+      recipient: "SAGINV – SOCIEDADE ANGOLANA DE GEST INVEST LDA",
+      number: "AO06 0045 0051 0001 2830 9674 5",
+      code: "BESCAOLUXXX",
+      name: "Banco Economico"
+    })
+
+    class Details
+      attr_accessor :recipient, :number, :code, :name
+
+      def initialize(recipient:, number:, code:, name:)
+        self.recipient = recipient
+        self.number = number
+        self.code = code
+        self.name = name
+      end
+    end
+
+    attr_accessor :locale_context
+
+    def initialize(locale_context)
+      self.locale_context = locale_context
+    end
+
+    def details
+      Details.new **DETAILS[locale_context.country.code]
+    end
+  end
+
   # TODO change the implementation, so it's JobartisCommon::Contact.new(country).company.email
+  #
   module Contact
     PREFIX_FOR = {
       "AO" => "+244",
@@ -49,6 +85,7 @@ module JobartisCommon
 
       extend self
     end
+
 
     Phone = Struct.new(:number, :prefix) do
       def pretty
